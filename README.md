@@ -1,5 +1,11 @@
 # Equinusocio's material theme for Vim/Neovim
 
+*****
+
+**IMPORTANT**: This repo has been reformed to reduce the size, and you might find problem (like `fatal: refusing to merge unrelated histories`) while runing plugin update command such as `PlugUpdate`. To solve this problem (for `vim-plug` users), first run `PlugClean` to detect the problem and delete the directory, then re-run `PlugUpdate` or `PlugInstall`.
+
+*****
+
 [![license: MIT](https://img.shields.io/badge/license-MIT-6F42C1)](LICENSE-MIT)
 
 This theme was ported from [equinusocio/vsc-material-theme](https://github.com/equinusocio/vsc-material-theme).
