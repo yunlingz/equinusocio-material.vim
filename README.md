@@ -4,6 +4,8 @@
 
 **IMPORTANT**: This repo has been reformed to reduce the size, and you might find problem (like `fatal: refusing to merge unrelated histories`) while runing plugin update command such as `PlugUpdate`. To solve this problem (for `vim-plug` users), first run `PlugClean` to detect the problem and delete the directory, then re-run `PlugUpdate` or `PlugInstall`.
 
+[Related issue](https://github.com/chuling/vim-equinusocio-material/issues/2)
+
 *****
 
 [![license: MIT](https://img.shields.io/badge/license-MIT-6F42C1)](LICENSE-MIT)
