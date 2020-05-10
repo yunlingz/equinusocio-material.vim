@@ -26,33 +26,33 @@
 
 set background=dark
 " if version > 580
-"   highlight! clear
-"   if exists('syntax_on')
-"     syntax reset
-"   endif
+"     highlight! clear
+"     if exists('syntax_on')
+"         syntax reset
+"     endif
 " endif
 highlight! clear
 syntax reset
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
-  finish
+    finish
 endif
 
 let g:colors_name = "equinusocio_material"
 set background=dark
 
 if get(g:, 'equinusocio_material_darker', 0) == 1
-  let s:black_br = '#545454'
-  let s:background = '#212121'
-  let s:cursor_guide = '#171717'
-  let s:selection = '#616161'
-  let s:indent_line = '#424242'
+    let s:black_br = '#545454'
+    let s:background = '#212121'
+    let s:cursor_guide = '#171717'
+    let s:selection = '#616161'
+    let s:indent_line = '#424242'
 else
-  let s:black_br = '#546e7a'
-  let s:background = '#263238'
-  let s:cursor_guide = '#1b2327'
-  let s:selection = '#667278'
-  let s:indent_line = '#37474f'
+    let s:black_br = '#546e7a'
+    let s:background = '#263238'
+    let s:cursor_guide = '#1b2327'
+    let s:selection = '#667278'
+    let s:indent_line = '#37474f'
 endif
 
 let s:black = '#000000'
@@ -80,27 +80,27 @@ let s:inverse = 'inverse'
 
 
 function! s:HL(group, fg, bg, attr)
-  execute 'highlight! ' . a:group . ' ctermfg=NONE'
-  execute 'highlight! ' . a:group . ' ctermbg=NONE'
-  execute 'highlight! ' . a:group . ' cterm=NONE'
+    execute 'highlight! ' . a:group . ' ctermfg=NONE'
+    execute 'highlight! ' . a:group . ' ctermbg=NONE'
+    execute 'highlight! ' . a:group . ' cterm=NONE'
 
-  if !empty(a:fg)
-    execute 'highlight! ' . a:group . ' guifg=' . a:fg
-  else
-    execute 'highlight! ' . a:group . ' guifg=NONE'
-  endif
+    if !empty(a:fg)
+        execute 'highlight! ' . a:group . ' guifg=' . a:fg
+    else
+        execute 'highlight! ' . a:group . ' guifg=NONE'
+    endif
 
-  if !empty(a:bg)
-    execute 'highlight! ' . a:group . ' guibg=' . a:bg
-  else
-    execute 'highlight! ' . a:group . ' guibg=NONE'
-  endif
+    if !empty(a:bg)
+        execute 'highlight! ' . a:group . ' guibg=' . a:bg
+    else
+        execute 'highlight! ' . a:group . ' guibg=NONE'
+    endif
 
-  if !empty(a:attr)
-    execute 'highlight! ' . a:group . ' gui=' . a:attr
-  else
-    execute 'highlight! ' . a:group . ' gui=NONE'
-  endif
+    if !empty(a:attr)
+        execute 'highlight! ' . a:group . ' gui=' . a:attr
+    else
+        execute 'highlight! ' . a:group . ' gui=NONE'
+    endif
 endfunction
 
 
@@ -126,9 +126,9 @@ call s:HL('EndOfBuffer', s:background, s:none, s:none)
 call s:HL('ErrorMsg', s:red, s:none, s:none)
 " ----------------------------------------------------
 if get(g:, 'equinusocio_material_hide_vertsplit', 0) == 1
-  call s:HL('VertSplit', s:background, s:none, s:none)
+    call s:HL('VertSplit', s:background, s:none, s:none)
 else
-  call s:HL('VertSplit', s:cursor_guide, s:none, s:none)
+    call s:HL('VertSplit', s:cursor_guide, s:none, s:none)
 endif
 " ----------------------------------------------------
 call s:HL('Folded', s:foreground, s:black_br, s:none)
@@ -295,16 +295,16 @@ call s:HL('CocHintHighlight', s:none, s:none, s:underline)
 " parentheses
 " ----------------------------------------------------
 augroup equinusocio_material_hi_parentheses
-  autocmd!
-  autocmd Syntax * syntax match MaterialThemeParens '[(){}\[\]]'
+    autocmd!
+    autocmd Syntax * syntax match MaterialThemeParens '[(){}\[\]]'
 augroup END
 call s:HL('MaterialThemeParens', s:cyan, s:none, s:none)
 " rainbow
 if !exists('g:rainbow_conf')
-  let g:rainbow_conf = {}
+    let g:rainbow_conf = {}
 endif
 if !has_key(g:rainbow_conf, 'guifgs')
-  let g:rainbow_conf['guifgs'] = [s:cyan, s:yellow, s:red]
+    let g:rainbow_conf['guifgs'] = [s:cyan, s:yellow, s:red]
 endif
 " ====================================================
 
@@ -330,40 +330,40 @@ call s:HL('semshiErrorChar', s:pure_black, s:red, s:none)
 " vim8/neovim buildin terminal colors
 " ----------------------------------------------------
 if has('nvim')
-  let g:terminal_color_0 = s:black
-  let g:terminal_color_1 = s:red
-  let g:terminal_color_2 = s:green
-  let g:terminal_color_3 = s:yellow
-  let g:terminal_color_4 = s:blue
-  let g:terminal_color_5 = s:magenta
-  let g:terminal_color_6 = s:cyan
-  let g:terminal_color_7 = s:white
-  let g:terminal_color_8 = s:black_br
-  let g:terminal_color_9 = s:red
-  let g:terminal_color_10 = s:green
-  let g:terminal_color_11 = s:yellow
-  let g:terminal_color_12 = s:blue
-  let g:terminal_color_13 = s:magenta
-  let g:terminal_color_14 = s:cyan
-  let g:terminal_color_15 = s:white
+    let g:terminal_color_0 = s:black
+    let g:terminal_color_1 = s:red
+    let g:terminal_color_2 = s:green
+    let g:terminal_color_3 = s:yellow
+    let g:terminal_color_4 = s:blue
+    let g:terminal_color_5 = s:magenta
+    let g:terminal_color_6 = s:cyan
+    let g:terminal_color_7 = s:white
+    let g:terminal_color_8 = s:black_br
+    let g:terminal_color_9 = s:red
+    let g:terminal_color_10 = s:green
+    let g:terminal_color_11 = s:yellow
+    let g:terminal_color_12 = s:blue
+    let g:terminal_color_13 = s:magenta
+    let g:terminal_color_14 = s:cyan
+    let g:terminal_color_15 = s:white
 elseif exists('*term_setansicolors')
-  let g:terminal_ansi_colors = [
-    \ s:black,
-    \ s:red,
-    \ s:green,
-    \ s:yellow,
-    \ s:blue,
-    \ s:magenta,
-    \ s:cyan,
-    \ s:white,
-    \ s:black_br,
-    \ s:red,
-    \ s:green,
-    \ s:yellow,
-    \ s:blue,
-    \ s:magenta,
-    \ s:cyan,
-    \ s:white,
-    \ ]
+    let g:terminal_ansi_colors = [
+        \ s:black,
+        \ s:red,
+        \ s:green,
+        \ s:yellow,
+        \ s:blue,
+        \ s:magenta,
+        \ s:cyan,
+        \ s:white,
+        \ s:black_br,
+        \ s:red,
+        \ s:green,
+        \ s:yellow,
+        \ s:blue,
+        \ s:magenta,
+        \ s:cyan,
+        \ s:white,
+        \ ]
 endif
 " ====================================================
