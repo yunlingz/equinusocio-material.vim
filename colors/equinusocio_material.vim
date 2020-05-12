@@ -311,19 +311,21 @@ endif
 " ====================================================
 " semshi
 " ----------------------------------------------------
-call s:HL('semshiLocal', s:orange, s:none, s:none)
-call s:HL('semshiGlobal', s:yellow, s:none, s:none)
-call s:HL('semshiImported', s:yellow, s:none, s:none)
-call s:HL('semshiParameter', s:red, s:none, s:none)
-call s:HL('semshiParameterUnused', s:cyan, s:none, s:underline)
-call s:HL('semshiFree', s:yellow, s:none, s:none)
-call s:HL('semshiBuiltin', s:magenta, s:none, s:none)
-call s:HL('semshiAttribute', s:green, s:none, s:none)
-call s:HL('semshiSelf', s:red, s:none, s:none)
-call s:HL('semshiUnresolved', s:yellow, s:none, s:underline)
-call s:HL('semshiSelected', s:pure_black, s:yellow, s:none)
-call s:HL('semshiErrorSign', s:pure_black, s:red, s:none)
-call s:HL('semshiErrorChar', s:pure_black, s:red, s:none)
+if has('nvim')
+    call s:HL('semshiLocal', s:orange, s:none, s:none)
+    call s:HL('semshiGlobal', s:yellow, s:none, s:none)
+    call s:HL('semshiImported', s:yellow, s:none, s:none)
+    call s:HL('semshiParameter', s:red, s:none, s:none)
+    call s:HL('semshiParameterUnused', s:cyan, s:none, s:underline)
+    call s:HL('semshiFree', s:yellow, s:none, s:none)
+    call s:HL('semshiBuiltin', s:magenta, s:none, s:none)
+    call s:HL('semshiAttribute', s:green, s:none, s:none)
+    call s:HL('semshiSelf', s:red, s:none, s:none)
+    call s:HL('semshiUnresolved', s:yellow, s:none, s:underline)
+    call s:HL('semshiSelected', s:pure_black, s:yellow, s:none)
+    call s:HL('semshiErrorSign', s:pure_black, s:red, s:none)
+    call s:HL('semshiErrorChar', s:pure_black, s:red, s:none)
+endif
 " ====================================================
 
 " ====================================================
