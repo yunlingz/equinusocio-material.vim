@@ -1,4 +1,4 @@
-# Equinusocio's material theme for Vim/Neovim
+# Equinusocio's material theme for Neovim/Vim
 
 *****
 
@@ -50,8 +50,8 @@ colorscheme equinusocio_material
 
 " this theme has a buildin lightline theme, you can turn it on
 let g:lightline = {
-    \ 'colorscheme': 'equinusocio_material',
-    \ }
+  \ 'colorscheme': 'equinusocio_material',
+  \ }
 ```
 
 ### Tmux
