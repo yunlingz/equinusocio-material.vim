@@ -26,8 +26,6 @@ Try this theme if others don't meet your needs.
 
 Note that syntax highlighting for brackets/parentheses in screenshots was enhanced by [luochen1990/rainbow](https://github.com/luochen1990/rainbow), you may like to install it manully.
 
-The font is [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono.git).
-
 ## How to use
 
 **IMPORTANT: True colors are required for vim in terminal**
