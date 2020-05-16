@@ -290,6 +290,20 @@ call s:HL('CocHintHighlight', s:none, s:none, s:underline)
 " ====================================================
 
 " ====================================================
+" vim-lsp
+" ----------------------------------------------------
+call s:HL('LspErrorText', s:red, s:none, s:none)
+call s:HL('LspWarningText', s:yellow, s:none, s:none)
+call s:HL('LspInformationText', s:orange, s:none, s:none)
+call s:HL('LspHintText', s:cyan, s:none, s:none)
+
+call s:HL('LspErrorHighlight', s:none, s:none, s:underline)
+call s:HL('LspWarningHighlight', s:none, s:none, s:underline)
+call s:HL('LspInformationHighlight', s:none, s:none, s:underline)
+call s:HL('LspHintHighlight', s:none, s:none, s:underline)
+" ====================================================
+
+" ====================================================
 " parentheses
 " ----------------------------------------------------
 augroup equinusocio_material_hi_parentheses
