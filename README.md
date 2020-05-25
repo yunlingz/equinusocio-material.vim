@@ -10,11 +10,11 @@ Try this theme if others don't meet your needs.
 
 ### Darker
 
-![](https://raw.githubusercontent.com/mireiko/vim-equinusocio-material-preview/master/0.png)
+![](https://raw.githubusercontent.com/chuling/vim-equinusocio-material-preview/master/0.png)
 
 ### Default
 
-![](https://raw.githubusercontent.com/mireiko/vim-equinusocio-material-preview/master/1.png)
+![](https://raw.githubusercontent.com/chuling/vim-equinusocio-material-preview/master/1.png)
 
 Note that syntax highlighting for brackets/parentheses in screenshots was enhanced by [luochen1990/rainbow](https://github.com/luochen1990/rainbow), you may like to install it manully.
 
@@ -25,7 +25,7 @@ Note that syntax highlighting for brackets/parentheses in screenshots was enhanc
 * vim-plug
 
 ```vim
-Plug 'mireiko/vim-equinusocio-material'
+Plug 'chuling/equinusocio-material.vim'
 
 " true colors are required for vim in terminal
 set termguicolors
@@ -49,7 +49,7 @@ let g:lightline = {
 
 **IMPORTANT**: This repo has been reformed to reduce the size, and you might find problem (like `fatal: refusing to merge unrelated histories`) while runing plugin update command such as `PlugUpdate`. To solve this problem (for `vim-plug` users), first run `PlugClean` to detect the problem and delete the directory, then re-run `PlugUpdate` or `PlugInstall`.
 
-[Related issue](https://github.com/mireiko/vim-equinusocio-material/issues/2)
+[Related issue](https://github.com/chuling/vim-equinusocio-material/issues/2)
 </details>
 
 ### Tmux
@@ -70,7 +70,7 @@ set -ga terminal-overrides ",${TERM}:Tc"
 
 ## Other
 
-If using iterm you are, please try this color preset [mireiko/iterm2-equinusocio-material](https://github.com/mireiko/iterm2-equinusocio-material).
+If using iterm you are, please try this color preset [chuling/iterm2-equinusocio-material](https://github.com/chuling/iterm2-equinusocio-material).
 
 It's also available here: [term](./term)
 
