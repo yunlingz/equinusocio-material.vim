@@ -33,8 +33,11 @@ set termguicolors
 " if you prefer the default one, comment out this line
 let g:equinusocio_material_darker = 1
 
-" make vertsplit invisible
+" make vertsplit invisible (visible by default)
 let g:equinusocio_material_hide_vertsplit = 1
+
+" use a better vertsplit char
+set fillchars+=vert:│
 
 colorscheme equinusocio_material
 
