@@ -1,6 +1,6 @@
 # Equinusocio's material theme for Neovim/Vim
 
-[![license: MIT](https://img.shields.io/badge/license-MIT-6F42C1)](LICENSE-MIT)
+[![license:Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-6F42C1)](LICENSE)
 
 This theme was ported from [equinusocio/vsc-material-theme](https://github.com/equinusocio/vsc-material-theme).
 
@@ -43,12 +43,12 @@ colorscheme equinusocio_material
 
 " this theme has a buildin lightline theme, you can turn it on
 let g:lightline = {
-    \ 'colorscheme': 'equinusocio_material',
-    \ }
+  \ 'colorscheme': 'equinusocio_material',
+  \ }
 ```
 
 <details>
-    <summary>Fix problem while updating</summary>
+  <summary>Fix problem while updating</summary>
 
 **IMPORTANT**: This repo has been reformed to reduce the size, and you might find problem (like `fatal: refusing to merge unrelated histories`) while runing plugin update command such as `PlugUpdate`. To solve this problem (for `vim-plug` users), first run `PlugClean` to detect the problem and delete the directory, then re-run `PlugUpdate` or `PlugInstall`.
 
@@ -79,4 +79,4 @@ It's also available here: [term](./term)
 
 ## License
 
-[MIT](LICENSE-MIT)
+[Apache-2.0](LICENSE)
