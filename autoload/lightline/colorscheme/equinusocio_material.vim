@@ -17,7 +17,7 @@ if exists('g:lightline')
   else
     let s:black_br = '#556e79'
     let s:background = '#263238'
-    let s:cursor_guide = '#1b2327'
+    let s:cursor_guide = '#1a2327'
     let s:background_lighter = '#344046'
   endif
 

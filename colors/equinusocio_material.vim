@@ -38,7 +38,7 @@ if get(g:, 'equinusocio_material_darker', 0) == 1
 else
   let s:black_br = '#546e7a'
   let s:background = '#263238'
-  let s:cursor_guide = '#1b2327'
+  let s:cursor_guide = '#1a2327'
   let s:selection = '#667278'
   let s:indent_line = '#37474f'
 endif
