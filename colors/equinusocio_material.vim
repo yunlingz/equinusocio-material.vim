@@ -43,8 +43,9 @@ else
   let s:indent_line = '#37474f'
 endif
 
+let s:vertsplit = s:cursor_guide
 if get(g:, 'equinusocio_material_hide_vertsplit', 0) == 1
-  let s:cursor_guide = s:background
+  let s:vertsplit = s:background
 endif
 
 let s:black = '#000000'
@@ -117,7 +118,7 @@ call s:HL('EndOfBuffer', s:background, s:none, s:none)
 " ----------------------------------------------------
 call s:HL('ErrorMsg', s:red, s:none, s:none)
 " ----------------------------------------------------
-call s:HL('VertSplit', s:cursor_guide, s:none, s:none)
+call s:HL('VertSplit', s:vertsplit, s:none, s:none)
 " ----------------------------------------------------
 call s:HL('Folded', s:foreground, s:black_br, s:none)
 call s:HL('FoldColumn', s:foreground, s:none, s:none)
