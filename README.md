@@ -30,11 +30,20 @@ Plug 'chuling/equinusocio-material.vim'
 " true colors are required for vim in terminal
 set termguicolors
 
-" if you prefer the default one, comment out this line
+" if you prefer the default one, comment out this line (default 0)
 let g:equinusocio_material_darker = 1
 
-" make vertsplit invisible (visible by default)
+" make vertsplit invisible (visible by default) (default 0)
 let g:equinusocio_material_hide_vertsplit = 1
+
+" parentheses improved (default 0)
+" enabling this option with 'luochen1990/rainbow' installed is not encouraged
+" because this option and 'luochen1990/rainbow' will registry conflicting events
+" in summary:
+" 1. no 'luochen1990/rainbow' installed, no parentheses improved: nothing to do (default 0)
+" 2. no 'luochen1990/rainbow' installed, want built-in parentheses improved: set to 1
+" 3. 'luochen1990/rainbow' installed: nothing to do (default 0)
+let g:equinusocio_material_bracket_improved = 1
 
 " use a better vertsplit char
 set fillchars+=vert:│

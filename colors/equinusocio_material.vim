@@ -297,11 +297,13 @@ call s:HL('LspHintHighlight', s:none, s:none, s:underline)
 " ====================================================
 " parentheses
 " ----------------------------------------------------
-augroup equinusocio_material_hi_parentheses
-  autocmd!
-  autocmd Syntax * syntax match MaterialThemeParens '[(){}\[\]]'
-augroup END
-call s:HL('MaterialThemeParens', s:cyan, s:none, s:none)
+if get(g:, 'equinusocio_material_bracket_improved', 0) == 1
+  augroup equinusocio_material_hi_parentheses
+    autocmd!
+    autocmd Syntax * syntax match MaterialThemeParens '[(){}\[\]]'
+  augroup END
+  call s:HL('MaterialThemeParens', s:cyan, s:none, s:none)
+endif
 " rainbow
 if !exists('g:rainbow_conf')
   let g:rainbow_conf = {}
