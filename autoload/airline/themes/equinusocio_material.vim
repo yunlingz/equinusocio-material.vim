@@ -37,6 +37,8 @@ let s:white = '#eeffff'
 let s:foreground = '#eeffff'
 " -------------- theme color ------------------
 
+let s:palette = {}
+
 let s:airline_b = [s:foreground, s:black_br, '', '']
 let s:airline_c = [s:foreground, s:background_lighter, '', '']
 let s:airline_modified_group = {
@@ -47,43 +49,44 @@ let s:airline_modified_group = {
 let s:airline_a_normal = [s:black , s:cyan, '', '']
 let s:airline_b_normal = s:airline_b
 let s:airline_c_normal = s:airline_c
-let g:airline#themes#equinusocio_material#palette.normal = airline#themes#generate_color_map(s:airline_a_normal, s:airline_b_normal, s:airline_c_normal)
-let g:airline#themes#equinusocio_material#palette.normal_modified = s:airline_modified_group
+let s:palette.normal = airline#themes#generate_color_map(s:airline_a_normal, s:airline_b_normal, s:airline_c_normal)
+let s:palette.normal_modified = s:airline_modified_group
 
 
 let s:airline_a_insert = [s:black , s:green, '', '']
 let s:airline_b_insert = s:airline_b
 let s:airline_c_insert = s:airline_c
-let g:airline#themes#equinusocio_material#palette.insert = airline#themes#generate_color_map(s:airline_a_insert, s:airline_b_insert, s:airline_c_insert)
-let g:airline#themes#equinusocio_material#palette.insert_modified = s:airline_modified_group
+let s:palette.insert = airline#themes#generate_color_map(s:airline_a_insert, s:airline_b_insert, s:airline_c_insert)
+let s:palette.insert_modified = s:airline_modified_group
 
 
-let g:airline#themes#equinusocio_material#palette.terminal = airline#themes#generate_color_map(s:airline_a_insert, s:airline_b_insert, s:airline_c_insert)
+let s:palette.terminal = airline#themes#generate_color_map(s:airline_a_insert, s:airline_b_insert, s:airline_c_insert)
 
 
-let g:airline#themes#equinusocio_material#palette.replace = g:airline#themes#equinusocio_material#palette.insert
-let g:airline#themes#equinusocio_material#palette.replace_modified = s:airline_modified_group
+let s:palette.replace = s:palette.insert
+let s:palette.replace_modified = s:airline_modified_group
 
 
 let s:airline_a_visual = [s:black , s:yellow, '', '']
 let s:airline_b_visual = s:airline_b
 let s:airline_c_visual = s:airline_c
-let g:airline#themes#equinusocio_material#palette.visual = airline#themes#generate_color_map(s:airline_a_visual, s:airline_b_visual, s:airline_c_visual)
-let g:airline#themes#equinusocio_material#palette.visual_modified = s:airline_modified_group
+let s:palette.visual = airline#themes#generate_color_map(s:airline_a_visual, s:airline_b_visual, s:airline_c_visual)
+let s:palette.visual_modified = s:airline_modified_group
 
 
 let s:airline_a_inactive = [s:foreground, s:black_br, '', '']
 let s:airline_b_inactive = [s:foreground, s:black_br, '', '']
 let s:airline_c_inactive = s:airline_c
-let g:airline#themes#equinusocio_material#palette.inactive = airline#themes#generate_color_map(s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive)
-let g:airline#themes#equinusocio_material#palette.inactive_modified = s:airline_modified_group
+let s:palette.inactive = airline#themes#generate_color_map(s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive)
+let s:palette.inactive_modified = s:airline_modified_group
 
 
 let s:airline_a_commandline = s:airline_a_normal
 let s:airline_b_commandline = s:airline_b
 let s:airline_c_commandline = s:airline_c
-let g:airline#themes#equinusocio_material#palette.commandline = airline#themes#generate_color_map(s:airline_a_commandline, s:airline_b_commandline, s:airline_c_commandline)
+let s:palette.commandline = airline#themes#generate_color_map(s:airline_a_commandline, s:airline_b_commandline, s:airline_c_commandline)
 
+let g:airline#themes#equinusocio_material#palette = s:palette
 " ------
 endfunction
 " -------- end function ----------
