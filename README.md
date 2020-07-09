@@ -50,7 +50,8 @@ set fillchars+=vert:│
 
 colorscheme equinusocio_material
 
-" this theme has a buildin lightline theme, you can turn it on
+" this theme has a buildin lightline/airline theme
+let g:airline_theme = 'equinusocio_material'
 let g:lightline = {
   \ 'colorscheme': 'equinusocio_material',
   \ }
