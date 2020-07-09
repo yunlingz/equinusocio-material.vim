@@ -41,7 +41,7 @@ let s:palette = {}
 let s:airline_b = [s:foreground, s:black_br, '', '']
 let s:airline_c = [s:foreground, s:background_lighter, '', '']
 let s:airline_modified_group = {
-  \ 'airline_c': [s:black, s:orange, '', ''],
+  \ 'airline_c': [s:green, s:background_lighter, '', ''],
   \ }
 
 
