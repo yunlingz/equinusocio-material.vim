@@ -31,7 +31,6 @@ let s:yellow = '#ffcb6b'
 let s:orange = '#f78c6c'
 let s:blue = '#82aaff'
 let s:magenta = '#c792ea'
-let s:magenta_darker = '#632e86'
 let s:cyan = '#89ddff'
 let s:white = '#eeffff'
 let s:foreground = '#eeffff'
@@ -42,7 +41,7 @@ let s:palette = {}
 let s:airline_b = [s:foreground, s:black_br, '', '']
 let s:airline_c = [s:foreground, s:background_lighter, '', '']
 let s:airline_modified_group = {
-  \ 'airline_c': [s:foreground, s:magenta_darker, '', ''],
+  \ 'airline_c': [s:black, s:orange, '', ''],
   \ }
 
 
