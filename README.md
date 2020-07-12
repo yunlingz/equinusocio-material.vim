@@ -10,11 +10,15 @@ Try this theme if others don't meet your needs.
 
 ### Darker
 
-![](https://raw.githubusercontent.com/chuling/vim-equinusocio-material-preview/master/0.png)
+![](https://raw.githubusercontent.com/chuling/vim-equinusocio-material-preview/master/darker.png)
 
 ### Default
 
-![](https://raw.githubusercontent.com/chuling/vim-equinusocio-material-preview/master/1.png)
+![](https://raw.githubusercontent.com/chuling/vim-equinusocio-material-preview/master/default.png)
+
+### Pure
+
+![](https://raw.githubusercontent.com/chuling/vim-equinusocio-material-preview/master/pure.png)
 
 Note that syntax highlighting for brackets/parentheses in screenshots was enhanced by [luochen1990/rainbow](https://github.com/luochen1990/rainbow), you may like to install it manully.
 
