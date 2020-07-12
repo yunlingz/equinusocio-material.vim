@@ -26,6 +26,7 @@ if s:style == 'darker'
   let s:cursor_guide = '#171717'
   let s:selection = '#616161'
   let s:indent_line = '#424242'
+  let s:menu_bg = '#000000'
 else
   " default
   let s:black_br = '#546e7a'
@@ -34,6 +35,7 @@ else
   let s:cursor_guide = '#1a2327'
   let s:selection = '#667278'
   let s:indent_line = '#37474f'
+  let s:menu_bg = '#000000'
 endif
 
 let s:vertsplit = s:cursor_guide

@@ -44,6 +44,7 @@ if s:style == 'darker'
   let s:cursor_guide = '#171717'
   let s:selection = '#616161'
   let s:indent_line = '#424242'
+  let s:menu_bg = '#000000'
 else
   " default
   let s:black_br = '#546e7a'
@@ -52,6 +53,7 @@ else
   let s:cursor_guide = '#1a2327'
   let s:selection = '#667278'
   let s:indent_line = '#37474f'
+  let s:menu_bg = '#000000'
 endif
 
 let s:vertsplit = s:cursor_guide
@@ -164,7 +166,7 @@ call s:HL('NonText', s:indent_line, s:none, s:none)
 call s:HL('Normal', s:foreground, s:background, s:none) " base color
 " ----------------------------------------------------
 call s:HL('Pmenu', s:foreground, s:black_br, s:none)
-call s:HL('PmenuSel', s:cyan, s:black, s:none)
+call s:HL('PmenuSel', s:cyan, s:menu_bg, s:none)
 call s:HL('PmenuSbar', s:none, s:black_br, s:none)
 call s:HL('PmenuThumb', s:none, s:foreground, s:none)
 " ----------------------------------------------------
@@ -256,8 +258,8 @@ call s:HL('ALEInfoSign', s:cyan, s:none, s:none)
 " ====================================================
 " echodoc
 " ----------------------------------------------------
-call s:HL('EchoDocFloat', s:foreground, s:black, s:none)
-call s:HL('EchoDocPopup', s:foreground, s:black, s:none)
+call s:HL('EchoDocFloat', s:foreground, s:menu_bg, s:none)
+call s:HL('EchoDocPopup', s:foreground, s:menu_bg, s:none)
 " ====================================================
 
 
@@ -269,11 +271,11 @@ call s:HL('CocWarningSign', s:yellow, s:none, s:none)
 call s:HL('CocInfoSign', s:orange, s:none, s:none)
 call s:HL('CocHintSign', s:cyan, s:none, s:none)
 
-call s:HL('CocFloating', s:foreground, s:black, s:none)
-call s:HL('CocErrorFloat', s:red, s:black, s:none)
-call s:HL('CocWarningFloat', s:yellow, s:black, s:none)
-call s:HL('CocInfoFloat', s:orange, s:black, s:none)
-call s:HL('CocHintFloat', s:cyan, s:black, s:none)
+call s:HL('CocFloating', s:foreground, s:menu_bg, s:none)
+call s:HL('CocErrorFloat', s:red, s:menu_bg, s:none)
+call s:HL('CocWarningFloat', s:yellow, s:menu_bg, s:none)
+call s:HL('CocInfoFloat', s:orange, s:menu_bg, s:none)
+call s:HL('CocHintFloat', s:cyan, s:menu_bg, s:none)
 
 " --- not found in coc.nvim doc ---
 " call s:HL('CocDiagnosticsError', s:red, s:none, s:none)
