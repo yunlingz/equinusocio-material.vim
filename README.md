@@ -30,10 +30,12 @@ Plug 'chuling/equinusocio-material.vim'
 " true colors are required for vim in terminal
 set termguicolors
 
-" if you prefer the default one, comment out this line (default 0)
-let g:equinusocio_material_darker = 1
+" use a different style
+" valid values: 'default' (default), 'darker', 'pure'
+let g:equinusocio_material_style = 'pure'
 
 " make vertsplit invisible (visible by default) (default 0)
+" if style == 'pure', then the vertsplit is always visible
 let g:equinusocio_material_hide_vertsplit = 1
 
 " parentheses improved (default 0)
