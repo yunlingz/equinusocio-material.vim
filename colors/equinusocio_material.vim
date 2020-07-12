@@ -29,15 +29,26 @@ endif
 let g:colors_name = "equinusocio_material"
 set background=dark
 
+" base color
+" ===================================================================
+let s:style = get(g:, 'equinusocio_material_style', 'default')
+
 if get(g:, 'equinusocio_material_darker', 0) == 1
+  let s:style = 'darker'
+endif
+
+if s:style == 'darker'
   let s:black_br = '#545454'
   let s:background = '#212121'
+  let s:background_lighter = '#2f2f2f'
   let s:cursor_guide = '#171717'
   let s:selection = '#616161'
   let s:indent_line = '#424242'
 else
+  " default
   let s:black_br = '#546e7a'
   let s:background = '#263238'
+  let s:background_lighter = '#344046'
   let s:cursor_guide = '#1a2327'
   let s:selection = '#667278'
   let s:indent_line = '#37474f'
@@ -71,6 +82,24 @@ let s:undercurl = 'undercurl'
 let s:bold = 'bold'
 let s:inverse = 'inverse'
 
+" pure
+" --------------------
+if s:style == 'pure'
+  let s:black_br = '#484848'
+  let s:background = '#000000'
+  let s:background_lighter = '#212121'
+  let s:cursor_guide = '#1c282e'
+  let s:selection = s:black_br
+  let s:indent_line = s:black_br
+  let s:menu_bg = '#353535'
+  let s:vertsplit = s:cursor_guide
+  let s:comment = '#b2ccd6'
+  " ---
+  let s:white = '#ffffff'
+  let s:foreground = '#ffffff'
+endif
+" --------------------
+" ===================================================================
 
 function! s:HL(group, fg, bg, attr)
   execute 'highlight! ' . a:group . ' ctermfg=NONE'
