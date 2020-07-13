@@ -26,7 +26,6 @@ if s:style == 'darker'
   let s:cursor_guide = '#171717'
   let s:selection = '#616161'
   let s:indent_line = '#424242'
-  let s:menu_bg = '#000000'
 else
   " default
   let s:black_br = '#546e7a'
@@ -35,7 +34,6 @@ else
   let s:cursor_guide = '#1a2327'
   let s:selection = '#667278'
   let s:indent_line = '#37474f'
-  let s:menu_bg = '#000000'
 endif
 
 let s:vertsplit = s:cursor_guide
@@ -55,7 +53,9 @@ let s:white = '#eeffff'
 " ---------------------------
 let s:foreground = '#eeffff'
 let s:caret = '#ffcc00'
-" let s:comment = '#b3ccd6'
+let s:menu_bg = s:black_br
+let s:float_bg = '#000000'
+let s:comment = s:black_br
 " let s:errorline = '#1b0000'
 " ---------------------------
 let s:pure_black = '#000000'
@@ -75,9 +75,12 @@ if s:style == 'pure'
   let s:cursor_guide = '#1c282e'
   let s:selection = s:black_br
   let s:indent_line = s:black_br
+  " ---
   let s:menu_bg = '#353535'
-  let s:vertsplit = s:cursor_guide
+  let s:float_bg = s:menu_bg
   let s:comment = '#b2ccd6'
+  " ---
+  let s:vertsplit = s:cursor_guide
   " ---
   let s:white = '#ffffff'
   let s:foreground = '#ffffff'

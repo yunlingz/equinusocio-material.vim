@@ -5,8 +5,6 @@
 " SPDX-License-Identifier: Apache-2.0
 " ------------------------------------------------------------------------
 
-" lightline
-
 " base color
 " ===================================================================
 let s:style = get(g:, 'equinusocio_material_style', 'default')
@@ -83,33 +81,3 @@ if s:style == 'pure'
 endif
 " --------------------
 " ===================================================================
-
-if exists('g:lightline')
-  let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
-
-  let s:p.normal.left = [[s:black, s:cyan], [s:foreground, s:black_br]]
-  let s:p.normal.right = [[s:black, s:cyan], [s:foreground, s:black_br]]
-  let s:p.normal.middle = [[s:foreground, s:background_lighter]]
-  let s:p.normal.error = [[s:foreground, s:red]]
-  let s:p.normal.warning = [[s:foreground, s:orange]]
-
-  let s:p.insert.left = [[s:black, s:green], [s:foreground, s:black_br]]
-  let s:p.insert.right = [[s:black, s:green], [s:foreground, s:black_br]]
-
-  let s:p.replace.left = [[s:black, s:red], [s:foreground, s:black_br]]
-  let s:p.replace.right = [[s:black, s:red], [s:foreground, s:black_br]]
-
-  let s:p.visual.left = [[s:black, s:yellow], [s:foreground, s:black_br]]
-  let s:p.visual.right = [[s:black, s:yellow], [s:foreground, s:black_br]]
-
-  let s:p.inactive.left =  [[s:foreground, s:black_br], [s:foreground, s:black_br]]
-  let s:p.inactive.right = [[s:foreground, s:black_br], [s:foreground, s:black_br]]
-  let s:p.inactive.middle = [[s:foreground, s:background_lighter]]
-
-  let s:p.tabline.left = [[s:foreground, s:background_lighter]]
-  let s:p.tabline.right = [[s:black, s:cyan]]
-  let s:p.tabline.middle = [[s:foreground, s:background_lighter]]
-  let s:p.tabline.tabsel = [[s:black, s:cyan]]
-
-  let g:lightline#colorscheme#equinusocio_material#palette = lightline#colorscheme#fill(s:p)
-endif

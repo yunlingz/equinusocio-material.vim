@@ -44,7 +44,6 @@ if s:style == 'darker'
   let s:cursor_guide = '#171717'
   let s:selection = '#616161'
   let s:indent_line = '#424242'
-  let s:menu_bg = '#000000'
 else
   " default
   let s:black_br = '#546e7a'
@@ -53,7 +52,6 @@ else
   let s:cursor_guide = '#1a2327'
   let s:selection = '#667278'
   let s:indent_line = '#37474f'
-  let s:menu_bg = '#000000'
 endif
 
 let s:vertsplit = s:cursor_guide
@@ -73,7 +71,9 @@ let s:white = '#eeffff'
 " ---------------------------
 let s:foreground = '#eeffff'
 let s:caret = '#ffcc00'
-" let s:comment = '#b3ccd6'
+let s:menu_bg = s:black_br
+let s:float_bg = '#000000'
+let s:comment = s:black_br
 " let s:errorline = '#1b0000'
 " ---------------------------
 let s:pure_black = '#000000'
@@ -93,9 +93,12 @@ if s:style == 'pure'
   let s:cursor_guide = '#1c282e'
   let s:selection = s:black_br
   let s:indent_line = s:black_br
+  " ---
   let s:menu_bg = '#353535'
-  let s:vertsplit = s:cursor_guide
+  let s:float_bg = s:menu_bg
   let s:comment = '#b2ccd6'
+  " ---
+  let s:vertsplit = s:cursor_guide
   " ---
   let s:white = '#ffffff'
   let s:foreground = '#ffffff'
@@ -165,9 +168,9 @@ call s:HL('MoreMsg', s:red, s:none, s:none)
 call s:HL('NonText', s:indent_line, s:none, s:none)
 call s:HL('Normal', s:foreground, s:background, s:none) " base color
 " ----------------------------------------------------
-call s:HL('Pmenu', s:foreground, s:black_br, s:none)
-call s:HL('PmenuSel', s:cyan, s:menu_bg, s:none)
-call s:HL('PmenuSbar', s:none, s:black_br, s:none)
+call s:HL('Pmenu', s:foreground, s:menu_bg, s:none)
+call s:HL('PmenuSel', s:cyan, s:black, s:none)
+call s:HL('PmenuSbar', s:none, s:menu_bg, s:none)
 call s:HL('PmenuThumb', s:none, s:foreground, s:none)
 " ----------------------------------------------------
 call s:HL('Question', s:red, s:none, s:none)
@@ -204,7 +207,7 @@ call s:HL('WildMenu', s:black, s:cyan, s:none)
 " ====================================================
 " standard syntax
 " ----------------------------------------------------
-call s:HL('Comment', s:black_br, s:none, s:none)
+call s:HL('Comment', s:comment, s:none, s:none)
 " ----------------------------------------------------
 call s:HL('Constant', s:foreground, s:none, s:none)
 call s:HL('String', s:green, s:none, s:none)
@@ -258,8 +261,8 @@ call s:HL('ALEInfoSign', s:cyan, s:none, s:none)
 " ====================================================
 " echodoc
 " ----------------------------------------------------
-call s:HL('EchoDocFloat', s:foreground, s:menu_bg, s:none)
-call s:HL('EchoDocPopup', s:foreground, s:menu_bg, s:none)
+call s:HL('EchoDocFloat', s:foreground, s:float_bg, s:none)
+call s:HL('EchoDocPopup', s:foreground, s:float_bg, s:none)
 " ====================================================
 
 
@@ -271,11 +274,11 @@ call s:HL('CocWarningSign', s:yellow, s:none, s:none)
 call s:HL('CocInfoSign', s:orange, s:none, s:none)
 call s:HL('CocHintSign', s:cyan, s:none, s:none)
 
-call s:HL('CocFloating', s:foreground, s:menu_bg, s:none)
-call s:HL('CocErrorFloat', s:red, s:menu_bg, s:none)
-call s:HL('CocWarningFloat', s:yellow, s:menu_bg, s:none)
-call s:HL('CocInfoFloat', s:orange, s:menu_bg, s:none)
-call s:HL('CocHintFloat', s:cyan, s:menu_bg, s:none)
+call s:HL('CocFloating', s:foreground, s:float_bg, s:none)
+call s:HL('CocErrorFloat', s:red, s:float_bg, s:none)
+call s:HL('CocWarningFloat', s:yellow, s:float_bg, s:none)
+call s:HL('CocInfoFloat', s:orange, s:float_bg, s:none)
+call s:HL('CocHintFloat', s:cyan, s:float_bg, s:none)
 
 " --- not found in coc.nvim doc ---
 " call s:HL('CocDiagnosticsError', s:red, s:none, s:none)
