@@ -29,109 +29,7 @@ endif
 let g:colors_name = "equinusocio_material"
 set background=dark
 
-" base color
-" ===================================================================
-let s:style = get(g:, 'equinusocio_material_style', 'default')
-
-if get(g:, 'equinusocio_material_darker', 0) == 1
-  let s:style = 'darker'
-endif
-
-if s:style == 'darker'
-  let s:black_br = '#545454'
-  let s:background = '#212121'
-  let s:background_lighter = '#2f2f2f'
-  let s:cursor_guide = '#171717'
-  let s:selection = '#616161'
-  let s:indent_line = '#424242'
-else
-  " default
-  let s:black_br = '#546e7a'
-  let s:background = '#263238'
-  let s:background_lighter = '#344046'
-  let s:cursor_guide = '#1a2327'
-  let s:selection = '#667278'
-  let s:indent_line = '#37474f'
-endif
-
-let s:vertsplit = s:cursor_guide
-if get(g:, 'equinusocio_material_hide_vertsplit', 0) == 1
-  let s:vertsplit = s:background
-endif
-
-let s:black = '#000000'
-let s:red = '#ff5370'
-let s:green = '#c3e88d'
-let s:yellow = '#ffcb6b'
-let s:orange = '#f78c6c'
-let s:blue = '#82aaff'
-let s:magenta = '#c792ea'
-let s:cyan = '#89ddff'
-let s:white = '#eeffff'
-" ---------------------------
-let s:foreground = '#eeffff'
-let s:caret = '#ffcc00'
-let s:menu_bg = s:black_br
-let s:float_bg = '#000000'
-let s:comment = s:black_br
-" let s:errorline = '#1b0000'
-" ---------------------------
-let s:pure_black = '#000000'
-" ---------------------------
-let s:none = 'NONE'
-let s:underline = 'underline'
-let s:undercurl = 'undercurl'
-let s:bold = 'bold'
-let s:inverse = 'inverse'
-
-" pure
-" --------------------
-if s:style == 'pure'
-  let s:black_br = '#484848'
-  let s:background = '#000000'
-  let s:background_lighter = '#212121'
-  let s:cursor_guide = '#1c282e'
-  let s:selection = s:black_br
-  let s:indent_line = s:black_br
-  " ---
-  let s:menu_bg = '#353535'
-  let s:float_bg = s:menu_bg
-  let s:comment = '#b2ccd6'
-  " ---
-  let s:vertsplit = s:cursor_guide
-  " ---
-  let s:white = '#ffffff'
-  let s:foreground = '#ffffff'
-endif
-" --------------------
-
-" less
-" --------------------
-function! s:hex2rgb(hex)
-  return [str2nr(a:hex[1:2], 16), str2nr(a:hex[3:4], 16), str2nr(a:hex[5:6], 16)]
-endfunction
-
-function! s:rgb_dec(rgb, dec)
-  return [max([a:rgb[0]-a:dec, 0]), max([a:rgb[1]-a:dec, 0]), max([a:rgb[2]-a:dec, 0])]
-endfunction
-
-function! s:rgb2hex(rgb)
-  return printf('#%02x%02x%02x', a:rgb[0], a:rgb[1], a:rgb[2])
-endfunction
-
-let s:less_color = get(g:, 'equinusocio_material_less', 0)
-function! s:apply_less_color()
-  for scheme in ['red', 'green', 'yellow', 'orange', 'blue', 'magenta', 'cyan', 'white', 'foreground']
-    execute 'let color = ' . 's:' . scheme
-    let rgb = s:rgb_dec(s:hex2rgb(color), s:less_color)
-    execute 'let s:' . scheme . " = '" . s:rgb2hex(rgb) . "'"
-  endfor
-endfunction
-if s:less_color > 0
-  call s:apply_less_color()
-endif
-" --------------------
-" ===================================================================
+let s:colors =  equinusocio_material#get_colors()
 
 function! s:HL(group, fg, bg, attr)
   execute 'highlight! ' . a:group . ' ctermfg=NONE'
@@ -161,162 +59,162 @@ endfunction
 " ====================================================
 " editor color scheme
 " ----------------------------------------------------
-call s:HL('ColorColumn', s:none, s:cursor_guide, s:none)
-call s:HL('Conceal', s:blue, s:none, s:none)
-call s:HL('Cursor', s:black, s:caret, s:none)
-call s:HL('CursorIM', s:black, s:caret, s:none)
-call s:HL('CursorColumn', s:none, s:cursor_guide, s:none)
-call s:HL('CursorLine', s:none, s:cursor_guide, s:none)
+call s:HL('ColorColumn', s:colors.none, s:colors.cursor_guide, s:colors.none)
+call s:HL('Conceal', s:colors.blue, s:colors.none, s:colors.none)
+call s:HL('Cursor', s:colors.black, s:colors.caret, s:colors.none)
+call s:HL('CursorIM', s:colors.black, s:colors.caret, s:colors.none)
+call s:HL('CursorColumn', s:colors.none, s:colors.cursor_guide, s:colors.none)
+call s:HL('CursorLine', s:colors.none, s:colors.cursor_guide, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Directory', s:cyan, s:none, s:none)
+call s:HL('Directory', s:colors.cyan, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('DiffAdd', s:green, s:none, s:none)
-call s:HL('DiffChange', s:yellow, s:none, s:none)
-call s:HL('DiffDelete', s:red, s:none, s:none)
-call s:HL('DiffText', s:magenta, s:none, s:none)
+call s:HL('DiffAdd', s:colors.green, s:colors.none, s:colors.none)
+call s:HL('DiffChange', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('DiffDelete', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('DiffText', s:colors.magenta, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('EndOfBuffer', s:background, s:none, s:none)
+call s:HL('EndOfBuffer', s:colors.background, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('ErrorMsg', s:red, s:none, s:none)
+call s:HL('ErrorMsg', s:colors.red, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('VertSplit', s:vertsplit, s:none, s:none)
+call s:HL('VertSplit', s:colors.vertsplit, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Folded', s:foreground, s:black_br, s:none)
-call s:HL('FoldColumn', s:foreground, s:none, s:none)
+call s:HL('Folded', s:colors.foreground, s:colors.black_br, s:colors.none)
+call s:HL('FoldColumn', s:colors.foreground, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('SignColumn', s:none, s:none, s:none)
-call s:HL('IncSearch', s:black, s:magenta, s:none)
-call s:HL('LineNr', s:black_br, s:none, s:none)
-call s:HL('CursorLineNr', s:foreground, s:none, s:none)
-call s:HL('MatchParen', s:black, s:red, s:none)
+call s:HL('SignColumn', s:colors.none, s:colors.none, s:colors.none)
+call s:HL('IncSearch', s:colors.black, s:colors.magenta, s:colors.none)
+call s:HL('LineNr', s:colors.black_br, s:colors.none, s:colors.none)
+call s:HL('CursorLineNr', s:colors.foreground, s:colors.none, s:colors.none)
+call s:HL('MatchParen', s:colors.black, s:colors.red, s:colors.none)
 " ----------------------------------------------------
-call s:HL('ModeMsg', s:foreground, s:none, s:none)
-call s:HL('MoreMsg', s:red, s:none, s:none)
-call s:HL('NonText', s:indent_line, s:none, s:none)
-call s:HL('Normal', s:foreground, s:background, s:none) " base color
+call s:HL('ModeMsg', s:colors.foreground, s:colors.none, s:colors.none)
+call s:HL('MoreMsg', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('NonText', s:colors.indent_line, s:colors.none, s:colors.none)
+call s:HL('Normal', s:colors.foreground, s:colors.background, s:colors.none) " base color
 " ----------------------------------------------------
-call s:HL('Pmenu', s:foreground, s:menu_bg, s:none)
-call s:HL('PmenuSel', s:cyan, s:black, s:none)
-call s:HL('PmenuSbar', s:none, s:menu_bg, s:none)
-call s:HL('PmenuThumb', s:none, s:foreground, s:none)
+call s:HL('Pmenu', s:colors.foreground, s:colors.menu_bg, s:colors.none)
+call s:HL('PmenuSel', s:colors.cyan, s:colors.black, s:colors.none)
+call s:HL('PmenuSbar', s:colors.none, s:colors.menu_bg, s:colors.none)
+call s:HL('PmenuThumb', s:colors.none, s:colors.foreground, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Question', s:red, s:none, s:none)
-call s:HL('QuickFixLine', s:foreground, s:background, s:none) " link it to normal
-call s:HL('Search', s:black, s:magenta, s:none)
-call s:HL('SpecialKey', s:black_br, s:none, s:none)
+call s:HL('Question', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('QuickFixLine', s:colors.foreground, s:colors.background, s:colors.none) " link it to normal
+call s:HL('Search', s:colors.black, s:colors.magenta, s:colors.none)
+call s:HL('SpecialKey', s:colors.black_br, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-" call s:HL('SpellBad', s:none, s:errorline, s:none)
-" call s:HL('SpellCap', s:none, s:errorline, s:none)
-" call s:HL('SpellLocal', s:none, s:errorline, s:none)
-" call s:HL('SpellRare', s:none, s:errorline, s:none)
-call s:HL('SpellBad', s:none, s:none, s:underline)
-call s:HL('SpellCap', s:none, s:none, s:underline)
-call s:HL('SpellLocal', s:none, s:none, s:underline)
-call s:HL('SpellRare', s:none, s:none, s:underline)
+" call s:HL('SpellBad', s:colors.none, s:colors.errorline, s:colors.none)
+" call s:HL('SpellCap', s:colors.none, s:colors.errorline, s:colors.none)
+" call s:HL('SpellLocal', s:colors.none, s:colors.errorline, s:colors.none)
+" call s:HL('SpellRare', s:colors.none, s:colors.errorline, s:colors.none)
+call s:HL('SpellBad', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('SpellCap', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('SpellLocal', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('SpellRare', s:colors.none, s:colors.none, s:colors.underline)
 " ----------------------------------------------------
-call s:HL('StatusLine', s:foreground, s:none, s:none)
-call s:HL('StatusLineNC', s:black_br, s:none, s:none)
-call s:HL('StatusLineTerm', s:foreground, s:none, s:none)
-call s:HL('StatusLineTermNC', s:black_br, s:none, s:none)
+call s:HL('StatusLine', s:colors.foreground, s:colors.none, s:colors.none)
+call s:HL('StatusLineNC', s:colors.black_br, s:colors.none, s:colors.none)
+call s:HL('StatusLineTerm', s:colors.foreground, s:colors.none, s:colors.none)
+call s:HL('StatusLineTermNC', s:colors.black_br, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('TabLine', s:foreground, s:none, s:none)
-call s:HL('TabLineFill', s:none, s:none, s:none)
-call s:HL('TabLineSel', s:foreground, s:black_br, s:none)
-call s:HL('Terminal', s:foreground, s:background, s:none)
-call s:HL('Title', s:red, s:none, s:none)
-call s:HL('Visual', s:foreground, s:selection, s:none)
-call s:HL('VisualNOS', s:foreground, s:selection, s:none)
-call s:HL('WarningMsg', s:red, s:none, s:none)
-call s:HL('WildMenu', s:black, s:cyan, s:none)
+call s:HL('TabLine', s:colors.foreground, s:colors.none, s:colors.none)
+call s:HL('TabLineFill', s:colors.none, s:colors.none, s:colors.none)
+call s:HL('TabLineSel', s:colors.foreground, s:colors.black_br, s:colors.none)
+call s:HL('Terminal', s:colors.foreground, s:colors.background, s:colors.none)
+call s:HL('Title', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('Visual', s:colors.foreground, s:colors.selection, s:colors.none)
+call s:HL('VisualNOS', s:colors.foreground, s:colors.selection, s:colors.none)
+call s:HL('WarningMsg', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('WildMenu', s:colors.black, s:colors.cyan, s:colors.none)
 " ====================================================
 
 
 " ====================================================
 " standard syntax
 " ----------------------------------------------------
-call s:HL('Comment', s:comment, s:none, s:none)
+call s:HL('Comment', s:colors.comment, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Constant', s:foreground, s:none, s:none)
-call s:HL('String', s:green, s:none, s:none)
-call s:HL('Number', s:orange, s:none, s:none)
-call s:HL('Boolean', s:orange, s:none, s:none)
-call s:HL('Float', s:orange, s:none, s:none)
+call s:HL('Constant', s:colors.foreground, s:colors.none, s:colors.none)
+call s:HL('String', s:colors.green, s:colors.none, s:colors.none)
+call s:HL('Number', s:colors.orange, s:colors.none, s:colors.none)
+call s:HL('Boolean', s:colors.orange, s:colors.none, s:colors.none)
+call s:HL('Float', s:colors.orange, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Identifier', s:yellow, s:none, s:none)
-call s:HL('Function', s:blue, s:none, s:none)
+call s:HL('Identifier', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('Function', s:colors.blue, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Statement', s:magenta, s:none, s:none)
-call s:HL('Conditional', s:cyan, s:none, s:none)
-call s:HL('Repeat', s:cyan, s:none, s:none)
-call s:HL('Operator', s:magenta, s:none, s:none)
-call s:HL('Keyword', s:magenta, s:none, s:none)
-call s:HL('Exception', s:cyan, s:none, s:none)
+call s:HL('Statement', s:colors.magenta, s:colors.none, s:colors.none)
+call s:HL('Conditional', s:colors.cyan, s:colors.none, s:colors.none)
+call s:HL('Repeat', s:colors.cyan, s:colors.none, s:colors.none)
+call s:HL('Operator', s:colors.magenta, s:colors.none, s:colors.none)
+call s:HL('Keyword', s:colors.magenta, s:colors.none, s:colors.none)
+call s:HL('Exception', s:colors.cyan, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('PreProc', s:cyan, s:none, s:none)
-call s:HL('Include', s:cyan, s:none, s:none)
-call s:HL('Define', s:blue, s:none, s:none)
-call s:HL('Macro', s:blue, s:none, s:none)
-call s:HL('PreCondit', s:yellow, s:none, s:none)
+call s:HL('PreProc', s:colors.cyan, s:colors.none, s:colors.none)
+call s:HL('Include', s:colors.cyan, s:colors.none, s:colors.none)
+call s:HL('Define', s:colors.blue, s:colors.none, s:colors.none)
+call s:HL('Macro', s:colors.blue, s:colors.none, s:colors.none)
+call s:HL('PreCondit', s:colors.yellow, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Type', s:yellow, s:none, s:none)
-call s:HL('StorageClass', s:yellow, s:none, s:none)
-call s:HL('Structure', s:magenta, s:none, s:none)
-call s:HL('Typedef', s:yellow, s:none, s:none)
+call s:HL('Type', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('StorageClass', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('Structure', s:colors.magenta, s:colors.none, s:colors.none)
+call s:HL('Typedef', s:colors.yellow, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Special', s:cyan, s:none, s:none)
+call s:HL('Special', s:colors.cyan, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('Underlined', s:none, s:none, s:underline)
-call s:HL('Ignore', s:none, s:none, s:none)
-call s:HL('Error', s:red, s:none, s:none)
-call s:HL('Todo', s:orange, s:none, s:none)
+call s:HL('Underlined', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('Ignore', s:colors.none, s:colors.none, s:colors.none)
+call s:HL('Error', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('Todo', s:colors.orange, s:colors.none, s:colors.none)
 " ====================================================
 
 
 " ====================================================
 " ale
 " ----------------------------------------------------
-call s:HL('ALEError', s:none, s:none, s:underline)
-call s:HL('ALEWarning', s:none, s:none, s:underline)
-call s:HL('ALEInfo', s:none, s:none, s:underline)
+call s:HL('ALEError', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('ALEWarning', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('ALEInfo', s:colors.none, s:colors.none, s:colors.underline)
 
-call s:HL('ALEErrorSign', s:red, s:none, s:none)
-call s:HL('ALEWarningSign', s:yellow, s:none, s:none)
-call s:HL('ALEInfoSign', s:cyan, s:none, s:none)
+call s:HL('ALEErrorSign', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('ALEWarningSign', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('ALEInfoSign', s:colors.cyan, s:colors.none, s:colors.none)
 " ====================================================
 
 
 " ====================================================
 " echodoc
 " ----------------------------------------------------
-call s:HL('EchoDocFloat', s:foreground, s:float_bg, s:none)
-call s:HL('EchoDocPopup', s:foreground, s:float_bg, s:none)
+call s:HL('EchoDocFloat', s:colors.foreground, s:colors.float_bg, s:colors.none)
+call s:HL('EchoDocPopup', s:colors.foreground, s:colors.float_bg, s:colors.none)
 " ====================================================
 
 
 " ====================================================
 " coc.nvim
 " ----------------------------------------------------
-call s:HL('CocErrorSign', s:red, s:none, s:none)
-call s:HL('CocWarningSign', s:yellow, s:none, s:none)
-call s:HL('CocInfoSign', s:orange, s:none, s:none)
-call s:HL('CocHintSign', s:cyan, s:none, s:none)
+call s:HL('CocErrorSign', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('CocWarningSign', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('CocInfoSign', s:colors.orange, s:colors.none, s:colors.none)
+call s:HL('CocHintSign', s:colors.cyan, s:colors.none, s:colors.none)
 
-call s:HL('CocFloating', s:foreground, s:float_bg, s:none)
-call s:HL('CocErrorFloat', s:red, s:float_bg, s:none)
-call s:HL('CocWarningFloat', s:yellow, s:float_bg, s:none)
-call s:HL('CocInfoFloat', s:orange, s:float_bg, s:none)
-call s:HL('CocHintFloat', s:cyan, s:float_bg, s:none)
+call s:HL('CocFloating', s:colors.foreground, s:colors.float_bg, s:colors.none)
+call s:HL('CocErrorFloat', s:colors.red, s:colors.float_bg, s:colors.none)
+call s:HL('CocWarningFloat', s:colors.yellow, s:colors.float_bg, s:colors.none)
+call s:HL('CocInfoFloat', s:colors.orange, s:colors.float_bg, s:colors.none)
+call s:HL('CocHintFloat', s:colors.cyan, s:colors.float_bg, s:colors.none)
 
 " --- not found in coc.nvim doc ---
-" call s:HL('CocDiagnosticsError', s:red, s:none, s:none)
-" call s:HL('CocDiagnosticsWarning', s:yellow, s:none, s:none)
-" call s:HL('CocDiagnosticsInfo', s:yellow, s:none, s:none)
-" call s:HL('CocDiagnosticsHint', s:cyan, s:none, s:none)
+" call s:HL('CocDiagnosticsError', s:colors.red, s:colors.none, s:colors.none)
+" call s:HL('CocDiagnosticsWarning', s:colors.yellow, s:colors.none, s:colors.none)
+" call s:HL('CocDiagnosticsInfo', s:colors.yellow, s:colors.none, s:colors.none)
+" call s:HL('CocDiagnosticsHint', s:colors.cyan, s:colors.none, s:colors.none)
 
-call s:HL('CocErrorHighlight', s:none, s:none, s:underline)
-call s:HL('CocWarningHighlight', s:none, s:none, s:underline)
-call s:HL('CocInfoHighlight', s:none, s:none, s:underline)
-call s:HL('CocHintHighlight', s:none, s:none, s:underline)
+call s:HL('CocErrorHighlight', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('CocWarningHighlight', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('CocInfoHighlight', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('CocHintHighlight', s:colors.none, s:colors.none, s:colors.underline)
 
 " ----------- gruvbox coc.nvim ---------
 " hi! link CocErrorSign GruvboxRedSign
@@ -335,24 +233,24 @@ call s:HL('CocHintHighlight', s:none, s:none, s:underline)
 " hi! link CocSelectedText GruvboxRed
 " hi! link CocCodeLens GruvboxGray
 
-" call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
-" call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:orange)
-" call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
-" call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+" call s:HL('CocErrorHighlight', s:colors.none, s:colors.none, s:colors.undercurl, s:colors.red)
+" call s:HL('CocWarningHighlight', s:colors.none, s:colors.none, s:colors.undercurl, s:colors.orange)
+" call s:HL('CocInfoHighlight', s:colors.none, s:colors.none, s:colors.undercurl, s:colors.yellow)
+" call s:HL('CocHintHighlight', s:colors.none, s:colors.none, s:colors.undercurl, s:colors.blue)
 " ====================================================
 
 " ====================================================
 " vim-lsp
 " ----------------------------------------------------
-call s:HL('LspErrorText', s:red, s:none, s:none)
-call s:HL('LspWarningText', s:yellow, s:none, s:none)
-call s:HL('LspInformationText', s:orange, s:none, s:none)
-call s:HL('LspHintText', s:cyan, s:none, s:none)
+call s:HL('LspErrorText', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('LspWarningText', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('LspInformationText', s:colors.orange, s:colors.none, s:colors.none)
+call s:HL('LspHintText', s:colors.cyan, s:colors.none, s:colors.none)
 
-call s:HL('LspErrorHighlight', s:none, s:none, s:underline)
-call s:HL('LspWarningHighlight', s:none, s:none, s:underline)
-call s:HL('LspInformationHighlight', s:none, s:none, s:underline)
-call s:HL('LspHintHighlight', s:none, s:none, s:underline)
+call s:HL('LspErrorHighlight', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('LspWarningHighlight', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('LspInformationHighlight', s:colors.none, s:colors.none, s:colors.underline)
+call s:HL('LspHintHighlight', s:colors.none, s:colors.none, s:colors.underline)
 " ====================================================
 
 " ====================================================
@@ -363,14 +261,14 @@ if get(g:, 'equinusocio_material_bracket_improved', 0) == 1
     autocmd!
     autocmd Syntax * syntax match MaterialThemeParens '[(){}\[\]]'
   augroup END
-  call s:HL('MaterialThemeParens', s:cyan, s:none, s:none)
+  call s:HL('MaterialThemeParens', s:colors.cyan, s:colors.none, s:colors.none)
 endif
 " rainbow
 if !exists('g:rainbow_conf')
   let g:rainbow_conf = {}
 endif
 if !has_key(g:rainbow_conf, 'guifgs')
-  let g:rainbow_conf['guifgs'] = [s:cyan, s:yellow, s:red]
+  let g:rainbow_conf['guifgs'] = [s:colors.cyan, s:colors.yellow, s:colors.red]
 endif
 " ====================================================
 
@@ -378,19 +276,19 @@ endif
 " semshi
 " ----------------------------------------------------
 if has('nvim')
-  call s:HL('semshiLocal', s:orange, s:none, s:none)
-  call s:HL('semshiGlobal', s:yellow, s:none, s:none)
-  call s:HL('semshiImported', s:yellow, s:none, s:none)
-  call s:HL('semshiParameter', s:red, s:none, s:none)
-  call s:HL('semshiParameterUnused', s:cyan, s:none, s:underline)
-  call s:HL('semshiFree', s:yellow, s:none, s:none)
-  call s:HL('semshiBuiltin', s:magenta, s:none, s:none)
-  call s:HL('semshiAttribute', s:green, s:none, s:none)
-  call s:HL('semshiSelf', s:red, s:none, s:none)
-  call s:HL('semshiUnresolved', s:yellow, s:none, s:underline)
-  call s:HL('semshiSelected', s:pure_black, s:yellow, s:none)
-  call s:HL('semshiErrorSign', s:pure_black, s:red, s:none)
-  call s:HL('semshiErrorChar', s:pure_black, s:red, s:none)
+  call s:HL('semshiLocal', s:colors.orange, s:colors.none, s:colors.none)
+  call s:HL('semshiGlobal', s:colors.yellow, s:colors.none, s:colors.none)
+  call s:HL('semshiImported', s:colors.yellow, s:colors.none, s:colors.none)
+  call s:HL('semshiParameter', s:colors.red, s:colors.none, s:colors.none)
+  call s:HL('semshiParameterUnused', s:colors.cyan, s:colors.none, s:colors.underline)
+  call s:HL('semshiFree', s:colors.yellow, s:colors.none, s:colors.none)
+  call s:HL('semshiBuiltin', s:colors.magenta, s:colors.none, s:colors.none)
+  call s:HL('semshiAttribute', s:colors.green, s:colors.none, s:colors.none)
+  call s:HL('semshiSelf', s:colors.red, s:colors.none, s:colors.none)
+  call s:HL('semshiUnresolved', s:colors.yellow, s:colors.none, s:colors.underline)
+  call s:HL('semshiSelected', s:colors.pure_black, s:colors.yellow, s:colors.none)
+  call s:HL('semshiErrorSign', s:colors.pure_black, s:colors.red, s:colors.none)
+  call s:HL('semshiErrorChar', s:colors.pure_black, s:colors.red, s:colors.none)
 endif
 " ====================================================
 
@@ -398,40 +296,40 @@ endif
 " vim8/neovim buildin terminal colors
 " ----------------------------------------------------
 if has('nvim')
-  let g:terminal_color_0 = s:black
-  let g:terminal_color_1 = s:red
-  let g:terminal_color_2 = s:green
-  let g:terminal_color_3 = s:yellow
-  let g:terminal_color_4 = s:blue
-  let g:terminal_color_5 = s:magenta
-  let g:terminal_color_6 = s:cyan
-  let g:terminal_color_7 = s:white
-  let g:terminal_color_8 = s:black_br
-  let g:terminal_color_9 = s:red
-  let g:terminal_color_10 = s:green
-  let g:terminal_color_11 = s:yellow
-  let g:terminal_color_12 = s:blue
-  let g:terminal_color_13 = s:magenta
-  let g:terminal_color_14 = s:cyan
-  let g:terminal_color_15 = s:white
+  let g:terminal_color_0 = s:colors.black
+  let g:terminal_color_1 = s:colors.red
+  let g:terminal_color_2 = s:colors.green
+  let g:terminal_color_3 = s:colors.yellow
+  let g:terminal_color_4 = s:colors.blue
+  let g:terminal_color_5 = s:colors.magenta
+  let g:terminal_color_6 = s:colors.cyan
+  let g:terminal_color_7 = s:colors.white
+  let g:terminal_color_8 = s:colors.black_br
+  let g:terminal_color_9 = s:colors.red
+  let g:terminal_color_10 = s:colors.green
+  let g:terminal_color_11 = s:colors.yellow
+  let g:terminal_color_12 = s:colors.blue
+  let g:terminal_color_13 = s:colors.magenta
+  let g:terminal_color_14 = s:colors.cyan
+  let g:terminal_color_15 = s:colors.white
 elseif exists('*term_setansicolors')
   let g:terminal_ansi_colors = [
-    \ s:black,
-    \ s:red,
-    \ s:green,
-    \ s:yellow,
-    \ s:blue,
-    \ s:magenta,
-    \ s:cyan,
-    \ s:white,
-    \ s:black_br,
-    \ s:red,
-    \ s:green,
-    \ s:yellow,
-    \ s:blue,
-    \ s:magenta,
-    \ s:cyan,
-    \ s:white,
+    \ s:colors.black,
+    \ s:colors.red,
+    \ s:colors.green,
+    \ s:colors.yellow,
+    \ s:colors.blue,
+    \ s:colors.magenta,
+    \ s:colors.cyan,
+    \ s:colors.white,
+    \ s:colors.black_br,
+    \ s:colors.red,
+    \ s:colors.green,
+    \ s:colors.yellow,
+    \ s:colors.blue,
+    \ s:colors.magenta,
+    \ s:colors.cyan,
+    \ s:colors.white,
     \ ]
 endif
 " ====================================================
