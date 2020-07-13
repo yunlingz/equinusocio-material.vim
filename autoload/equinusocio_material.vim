@@ -73,7 +73,8 @@ if s:style == 'pure'
   " ---
   let s:colors.menu_bg = '#353535'
   let s:colors.float_bg = s:colors.menu_bg
-  let s:colors.comment = '#b2ccd6'
+  " let s:colors.comment = '#b2ccd6'
+  let s:colors.comment = '#727272'
   " ---
   let s:colors.vertsplit = s:colors.cursor_guide
   " ---
