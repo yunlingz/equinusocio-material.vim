@@ -38,6 +38,11 @@ set termguicolors
 " valid values: 'default' (default), 'darker', 'pure'
 let g:equinusocio_material_style = 'pure'
 
+" less bright
+" which means some color will be modified by this formula:
+" (r, g, b) -> (r - less, g - less, b - less)
+let g:equinusocio_material_less = 50
+
 " make vertsplit invisible (visible by default) (default 0)
 " if style == 'pure', then the vertsplit is always visible
 let g:equinusocio_material_hide_vertsplit = 1

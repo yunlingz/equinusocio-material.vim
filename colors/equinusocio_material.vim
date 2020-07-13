@@ -104,6 +104,33 @@ if s:style == 'pure'
   let s:foreground = '#ffffff'
 endif
 " --------------------
+
+" less
+" --------------------
+function! s:hex2rgb(hex)
+  return [str2nr(a:hex[1:2], 16), str2nr(a:hex[3:4], 16), str2nr(a:hex[5:6], 16)]
+endfunction
+
+function! s:rgb_dec(rgb, dec)
+  return [max([a:rgb[0]-a:dec, 0]), max([a:rgb[1]-a:dec, 0]), max([a:rgb[2]-a:dec, 0])]
+endfunction
+
+function! s:rgb2hex(rgb)
+  return printf('#%02x%02x%02x', a:rgb[0], a:rgb[1], a:rgb[2])
+endfunction
+
+let s:less_color = get(g:, 'equinusocio_material_less', 0)
+function! s:apply_less_color()
+  for scheme in ['red', 'green', 'yellow', 'orange', 'blue', 'magenta', 'cyan', 'white', 'foreground']
+    execute 'let color = ' . 's:' . scheme
+    let rgb = s:rgb_dec(s:hex2rgb(color), s:less_color)
+    execute 'let s:' . scheme . " = '" . s:rgb2hex(rgb) . "'"
+  endfor
+endfunction
+if s:less_color > 0
+  call s:apply_less_color()
+endif
+" --------------------
 " ===================================================================
 
 function! s:HL(group, fg, bg, attr)
