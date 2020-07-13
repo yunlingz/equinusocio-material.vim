@@ -39,7 +39,7 @@ set termguicolors
 let g:equinusocio_material_style = 'pure'
 
 " less bright
-" which means some color will be modified by this formula:
+" which means some colors will be modified by this formula:
 " (r, g, b) -> ( max(r - less, 0), max(g - less, 0), max(b - less, 0) )
 let g:equinusocio_material_less = 50
 
