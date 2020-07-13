@@ -98,13 +98,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Red Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 	</dict>
 	<key>Ansi 2 Color</key>
 	<dict>
@@ -176,13 +176,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Red Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 	</dict>
 	<key>Ansi 8 Color</key>
 	<dict>
@@ -241,13 +241,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Red Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 	</dict>
 	<key>Cursor Color</key>
 	<dict>
@@ -293,13 +293,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Red Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 	</dict>
 	<key>Link Color</key>
 	<dict>
@@ -319,13 +319,13 @@
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 		<key>Red Component</key>
-		<real>1</real>
+		<real>0.93333333730697632</real>
 	</dict>
 	<key>Selection Color</key>
 	<dict>

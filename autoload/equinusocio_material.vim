@@ -77,8 +77,8 @@ if s:style == 'pure'
   " ---
   let s:colors.vertsplit = s:colors.cursor_guide
   " ---
-  let s:colors.white = '#ffffff'
-  let s:colors.foreground = '#ffffff'
+  let s:colors.white = '#eeeeee'
+  let s:colors.foreground = '#eeeeee'
 endif
 " --------------------
 
@@ -96,16 +96,16 @@ function! s:rgb2hex(rgb)
   return printf('#%02x%02x%02x', a:rgb[0], a:rgb[1], a:rgb[2])
 endfunction
 
-let s:less_color = get(g:, 'equinusocio_material_less', 0)
-function! s:apply_less_color()
+function! s:apply_less_color(less)
   for scheme in ['red', 'green', 'yellow', 'orange', 'blue', 'magenta', 'cyan', 'white', 'foreground']
     execute 'let color = ' . 's:colors.' . scheme
-    let rgb = s:rgb_dec(s:hex2rgb(color), s:less_color)
+    let rgb = s:rgb_dec(s:hex2rgb(color), a:less)
     execute 'let s:colors.' . scheme . " = '" . s:rgb2hex(rgb) . "'"
   endfor
 endfunction
+let s:less_color = get(g:, 'equinusocio_material_less', 0)
 if s:less_color > 0
-  call s:apply_less_color()
+  call s:apply_less_color(s:less_color)
 endif
 " --------------------
 " ===================================================================
