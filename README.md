@@ -40,7 +40,7 @@ let g:equinusocio_material_style = 'pure'
 
 " less bright
 " which means some color will be modified by this formula:
-" (r, g, b) -> (r - less, g - less, b - less)
+" (r, g, b) -> ( max(r - less, 0), max(g - less, 0), max(b - less, 0) )
 let g:equinusocio_material_less = 50
 
 " make vertsplit invisible (visible by default) (default 0)
