@@ -71,7 +71,7 @@ if s:style == 'pure'
   let s:colors.selection = s:colors.black_br
   let s:colors.indent_line = s:colors.black_br
   " ---
-  let s:colors.menu_bg = '#353535'
+  let s:colors.menu_bg = '#303030'
   let s:colors.float_bg = s:colors.menu_bg
   " let s:colors.comment = '#b2ccd6'
   let s:colors.comment = '#727272'
