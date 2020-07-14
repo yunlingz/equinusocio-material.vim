@@ -1,6 +1,6 @@
 # Equinusocio's material theme for Neovim/Vim
 
-[![license:Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-6F42C1)](LICENSE)
+[![license:MIT](https://img.shields.io/badge/license-MIT-6F42C1)](LICENSE)
 
 This theme was ported from [equinusocio/vsc-material-theme](https://github.com/equinusocio/vsc-material-theme).
 
@@ -100,4 +100,4 @@ It's also available here: [term](./term)
 
 ## License
 
-[Apache-2.0](LICENSE)
+[MIT](LICENSE)

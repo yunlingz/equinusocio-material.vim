@@ -2,7 +2,7 @@
 " Copyright 2020 github.com/chuling and contributors
 " See the full list at:
 "   https://github.com/chuling/equinusocio-material.vim/contributors
-" SPDX-License-Identifier: Apache-2.0
+" SPDX-License-Identifier: MIT
 " ------------------------------------------------------------------------
 
 " lightline
