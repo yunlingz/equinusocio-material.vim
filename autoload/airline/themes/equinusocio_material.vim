@@ -11,7 +11,7 @@
 let g:airline#themes#equinusocio_material#palette = {}
 function! airline#themes#equinusocio_material#refresh()
 
-let s:colors =  equinusocio_material#get_colors()
+let s:colors = equinusocio_material#get_colors()
 
 let s:palette = {}
 

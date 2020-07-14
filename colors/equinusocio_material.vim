@@ -29,7 +29,7 @@ endif
 let g:colors_name = "equinusocio_material"
 set background=dark
 
-let s:colors =  equinusocio_material#get_colors()
+let s:colors = equinusocio_material#get_colors()
 
 function! s:HL(group, fg, bg, attr)
   execute 'highlight! ' . a:group . ' ctermfg=NONE'

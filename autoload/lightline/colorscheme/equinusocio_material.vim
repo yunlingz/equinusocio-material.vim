@@ -7,7 +7,7 @@
 
 " lightline
 
-let s:colors =  equinusocio_material#get_colors()
+let s:colors = equinusocio_material#get_colors()
 
 if exists('g:lightline')
   let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
