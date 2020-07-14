@@ -64,7 +64,7 @@ let s:colors.inverse = 'inverse'
 " pure
 " --------------------
 if s:style == 'pure'
-  let s:colors.black_br = '#484848'
+  let s:colors.black_br = '#3c3c3c'
   let s:colors.background = '#000000'
   let s:colors.background_lighter = '#212121'
   let s:colors.cursor_guide = '#1c282e'
