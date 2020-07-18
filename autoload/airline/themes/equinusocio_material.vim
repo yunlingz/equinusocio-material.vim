@@ -15,7 +15,7 @@ let s:colors = equinusocio_material#get_colors()
 
 let s:palette = {}
 
-let s:airline_b = [s:colors.foreground, s:colors.black_br, '', '']
+let s:airline_b = [s:colors.foreground, s:colors.selection, '', '']
 let s:airline_c = [s:colors.foreground, s:colors.background_lighter, '', '']
 let s:airline_modified_group = {
   \ 'airline_c': [s:colors.green, s:colors.background_lighter, '', ''],
@@ -50,8 +50,8 @@ let s:palette.visual = airline#themes#generate_color_map(s:airline_a_visual, s:a
 let s:palette.visual_modified = s:airline_modified_group
 
 
-let s:airline_a_inactive = [s:colors.foreground, s:colors.black_br, '', '']
-let s:airline_b_inactive = [s:colors.foreground, s:colors.black_br, '', '']
+let s:airline_a_inactive = [s:colors.foreground, s:colors.selection, '', '']
+let s:airline_b_inactive = [s:colors.foreground, s:colors.selection, '', '']
 let s:airline_c_inactive = s:airline_c
 let s:palette.inactive = airline#themes#generate_color_map(s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive)
 let s:palette.inactive_modified = s:airline_modified_group
