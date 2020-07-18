@@ -19,16 +19,22 @@ if s:style == 'darker'
   let s:colors.background = '#212121'
   let s:colors.background_lighter = '#2f2f2f'
   let s:colors.cursor_guide = '#171717'
-  let s:colors.selection = '#616161'
+  let s:colors.selection = '#454545'
   let s:colors.indent_line = '#424242'
+  " ---
+  let s:colors.menu_bg = '#414141'
+  let s:colors.comment = '#747474'
 else
   " default
   let s:colors.black_br = '#546e7a'
   let s:colors.background = '#263238'
   let s:colors.background_lighter = '#344046'
   let s:colors.cursor_guide = '#1a2327'
-  let s:colors.selection = '#667278'
+  let s:colors.selection = '#42565a'
   let s:colors.indent_line = '#37474f'
+  " ---
+  let s:colors.menu_bg = '#465258'
+  let s:colors.comment = '#748e9a'
 endif
 
 let s:colors.vertsplit = s:colors.cursor_guide
@@ -48,10 +54,7 @@ let s:colors.white = '#eeffff'
 " ---------------------------
 let s:colors.foreground = '#eeffff'
 let s:colors.caret = '#ffcc00'
-let s:colors.menu_bg = s:colors.black_br
 let s:colors.float_bg = '#000000'
-let s:colors.comment = s:colors.black_br
-" let s:colors.errorline = '#1b0000'
 " ---------------------------
 let s:colors.pure_black = '#000000'
 " ---------------------------
