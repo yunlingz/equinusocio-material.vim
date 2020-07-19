@@ -48,9 +48,9 @@ let s:colors.orange = '#f78c6c'
 let s:colors.blue = '#82aaff'
 let s:colors.magenta = '#c792ea'
 let s:colors.cyan = '#89ddff'
-let s:colors.white = '#eeffff'
+let s:colors.white = '#eefffb'
 " ---------------------------
-let s:colors.foreground = '#eeffff'
+let s:colors.foreground = '#eefffb'
 let s:colors.caret = '#ffcc00'
 let s:colors.float_bg = '#000000'
 let s:colors.comment = s:colors.black_br
