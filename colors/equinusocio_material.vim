@@ -293,6 +293,20 @@ endif
 " ====================================================
 
 " ====================================================
+" indentline
+" ----------------------------------------------------
+if !exists('g:indentLine_char_list')
+  let g:indentLine_char_list = ['│']
+endif
+if !exists('g:indentLine_color_gui')
+  let g:indentLine_color_gui = s:colors.selection
+endif
+" if !exists('g:indentLine_enabled')
+"   let g:indentLine_enabled = 1
+" endif
+" ====================================================
+
+" ====================================================
 " vim8/neovim buildin terminal colors
 " ----------------------------------------------------
 if has('nvim')
