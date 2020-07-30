@@ -66,16 +66,16 @@ let s:colors.inverse = 'inverse'
 " pure
 " --------------------
 if s:style == 'pure'
-  let s:colors.black_br = '#3c3c3c'
+  let s:colors.black_br = '#727272'
   let s:colors.background = '#000000'
   let s:colors.background_lighter = '#212121'
   let s:colors.cursor_guide = '#1c282e'
-  let s:colors.selection = s:colors.black_br
+  let s:colors.selection = '#3c3c3c'
   let s:colors.indent_line = s:colors.black_br
   " ---
   let s:colors.menu_bg = '#303030'
   let s:colors.float_bg = s:colors.menu_bg
-  let s:colors.comment = '#727272'
+  let s:colors.comment = s:colors.black_br
   " ---
   let s:colors.vertsplit = s:colors.cursor_guide
 endif
