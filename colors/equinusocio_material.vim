@@ -307,6 +307,15 @@ endif
 " ====================================================
 
 " ====================================================
+" LanguageClient-neovim
+" ----------------------------------------------------
+call s:HL('LanguageClientHover', s:colors.none, s:colors.float_bg, s:colors.none)
+if !exists('g:LanguageClient_floatingHoverHighlight')
+  let g:LanguageClient_floatingHoverHighlight = 'Normal:LanguageClientHover'
+endif
+" ====================================================
+
+" ====================================================
 " vim8/neovim buildin terminal colors
 " ----------------------------------------------------
 if has('nvim')
