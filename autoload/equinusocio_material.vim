@@ -48,9 +48,9 @@ let s:colors.orange = '#f78c6c'
 let s:colors.blue = '#82aaff'
 let s:colors.magenta = '#c792ea'
 let s:colors.cyan = '#89ddff'
-let s:colors.white = '#eeeeee'
+let s:colors.white = '#eeffff'
 " ---------------------------
-let s:colors.foreground = '#eeeeee'
+let s:colors.foreground = '#eeffff'
 let s:colors.caret = '#ffcc00'
 let s:colors.float_bg = '#000000'
 let s:colors.comment = s:colors.black_br
@@ -78,6 +78,9 @@ if s:style == 'pure'
   let s:colors.comment = s:colors.black_br
   " ---
   let s:colors.vertsplit = s:colors.cursor_guide
+  " ---
+  let s:colors.white = '#eeeeee'
+  let s:colors.foreground = '#eeeeee'
 endif
 " --------------------
 
