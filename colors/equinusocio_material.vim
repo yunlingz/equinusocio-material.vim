@@ -68,10 +68,14 @@ call s:HL('CursorLine', s:colors.none, s:colors.cursor_guide, s:colors.none)
 " ----------------------------------------------------
 call s:HL('Directory', s:colors.cyan, s:colors.none, s:colors.none)
 " ----------------------------------------------------
-call s:HL('DiffAdd', s:colors.green, s:colors.none, s:colors.none)
-call s:HL('DiffChange', s:colors.yellow, s:colors.none, s:colors.none)
-call s:HL('DiffDelete', s:colors.red, s:colors.none, s:colors.none)
-call s:HL('DiffText', s:colors.magenta, s:colors.none, s:colors.none)
+" call s:HL('DiffAdd', s:colors.green, s:colors.none, s:colors.none)
+" call s:HL('DiffChange', s:colors.yellow, s:colors.none, s:colors.none)
+" call s:HL('DiffDelete', s:colors.red, s:colors.none, s:colors.none)
+" call s:HL('DiffText', s:colors.magenta, s:colors.none, s:colors.none)
+call s:HL('DiffAdd', s:colors.black, s:colors.green, s:colors.none)
+call s:HL('DiffChange', s:colors.black, s:colors.yellow, s:colors.none)
+call s:HL('DiffDelete', s:colors.black, s:colors.red, s:colors.none)
+call s:HL('DiffText', s:colors.black, s:colors.magenta, s:colors.none)
 " ----------------------------------------------------
 call s:HL('EndOfBuffer', s:colors.background, s:colors.none, s:colors.none)
 " ----------------------------------------------------
