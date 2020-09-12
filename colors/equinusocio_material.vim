@@ -320,6 +320,15 @@ endif
 " ====================================================
 
 " ====================================================
+" vim-signify
+" ----------------------------------------------------
+call s:HL('SignifySignAdd', s:colors.green, s:colors.none, s:colors.none)
+call s:HL('SignifySignChange', s:colors.yellow, s:colors.none, s:colors.none)
+call s:HL('SignifySignDelete', s:colors.red, s:colors.none, s:colors.none)
+call s:HL('SignifySignDeleteFirstLine', s:colors.red, s:colors.none, s:colors.none)
+" ====================================================
+
+" ====================================================
 " vim8/neovim buildin terminal colors
 " ----------------------------------------------------
 if has('nvim')
