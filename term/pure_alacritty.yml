@@ -1,0 +1,32 @@
+# Colors (equinusocio material)
+colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xffffff'
+
+  cursor:
+    text: '0x000000'
+    cursor: '0xffcc00'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xff5370'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xffffff'
+
+  # Bright colors
+  bright:
+    black:   '0x484848'
+    red:     '0xFF5370'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xffffff'
