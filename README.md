@@ -98,6 +98,8 @@ If using iterm you are, please try this color preset [chuling/iterm2-equinusocio
 
 It's also available here: [term](./term)
 
+An alacritty config for the pure theme is available here: [pure_alacritty.yml](./term/pure_alacritty.yml)
+
 ## License
 
 [MIT](LICENSE)
