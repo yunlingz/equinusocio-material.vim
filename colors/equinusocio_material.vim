@@ -140,6 +140,7 @@ call s:HL('Comment', s:colors.comment, s:colors.none, s:colors.none)
 " ----------------------------------------------------
 call s:HL('Constant', s:colors.foreground, s:colors.none, s:colors.none)
 call s:HL('String', s:colors.green, s:colors.none, s:colors.none)
+call s:HL('Character', s:colors.green, s:colors.none, s:colors.none)
 call s:HL('Number', s:colors.orange, s:colors.none, s:colors.none)
 call s:HL('Boolean', s:colors.orange, s:colors.none, s:colors.none)
 call s:HL('Float', s:colors.orange, s:colors.none, s:colors.none)
