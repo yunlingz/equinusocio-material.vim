@@ -1,9 +1,6 @@
-" ------------------------------------------------------------------------
-" Copyright 2020 github.com/chuling and contributors
-" See the full list at:
-"   https://github.com/chuling/equinusocio-material.vim/contributors
-" SPDX-License-Identifier: MIT
-" ------------------------------------------------------------------------
+" SPDX-License-Identifier: BSD-2-Clause
+"
+" Copyright 2021 Zhu Yun-ling <yunling.zhu@outlook.com> and contributors
 
 " airline
 
